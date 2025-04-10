@@ -12,15 +12,15 @@ def main():
 
         # Ask user for 4 possible answers
         answers = {}
-        for option in ['A', 'B', 'C', 'D']:
+        for option in ['a', 'b', 'c', 'd']:
             answer = input(f"Enter answer option {option}: ")
             answers[option] = answer
 
         # Ask user for the correct answer
-        correct_answer = input("Enter the correct answer option (A, B, C, or D): ").lower()
+        correct_answer = input("Enter the correct answer option (a, b, c, or d): ").lower()
         while correct_answer not in answers:
-            print("Invalid option. Please enter A, B, C, or D.")
-            correct_answer = input("Enter the correct answer option (A, B, C, or D): ").lower()
+            print("Invalid option. Please enter a, b, c, or d.")
+            correct_answer = input("Enter the correct answer option (a, b, c, or d): ").lower()
 
         # Converts data obtained into a text file in the same folder as the code
         with open('question_bank.txt', 'a') as file:
