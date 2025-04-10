@@ -15,3 +15,9 @@ def main():
         for option in ['A', 'B', 'C', 'D']:
             answer = input(f"Enter answer option {option}: ")
             answers[option] = answer
+
+        # Ask user for the correct answer
+        correct_answer = input("Enter the correct answer option (A, B, C, or D): ").lower()
+        while correct_answer not in answers:
+            print("Invalid option. Please enter A, B, C, or D.")
+            correct_answer = input("Enter the correct answer option (A, B, C, or D): ").lower()
