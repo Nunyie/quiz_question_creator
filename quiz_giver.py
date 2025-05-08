@@ -51,7 +51,7 @@ def run_quiz():
         # Get user's input
         user_answer = input("Enter your answer (a, b, c, or d): ").strip().upper()
         # Extracts correct answer from data block
-        correct_answer = correct_line.split(": ")[1].strip().upper()
+        correct_answer = correct_answer.split(": ")[1].strip().upper()
 
         # Compares user's answer with the correct answer
         if user_answer == correct_answer:
@@ -61,10 +61,13 @@ def run_quiz():
         else:
             print(f"Incorrect! The correct answer was {correct_answer}.")
 
+        # Asks user if they want to continue after each question
         continue_quiz = input("Do you want to continue? (yes/no): ").strip().lower()
         if continue_quiz != 'yes':
             print("Thank you for playing!!")
-
+    
+    # Final score display
+    print("\nQuiz completed!")
     print(f"\nYour final score is {score} out of {total}.")
 
 if __name__ == "__main__":
