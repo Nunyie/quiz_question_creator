@@ -37,4 +37,14 @@ def run_quiz():
     score = 0 # Initialize score to 0
     total = len(quiz_data) # Total number of questions
 
-    
+    # Reads each block of data (question, answers, correct answer)
+    for block in quiz_data:
+        question = block[0]
+        options = block[1:5]
+        correct_answer = block[5]
+
+        # Display question and options to user
+        print("\n" + question)
+        for option in options:
+            print(option)
+        
