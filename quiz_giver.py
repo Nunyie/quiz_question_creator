@@ -49,7 +49,13 @@ def run_quiz():
             print(option)
         
         # Get user's input
-        user_answer = input("Enter your answer (a, b, c, or d): ").strip().upper()
+        valid_input = ['A', 'B', 'C', 'D']
+        while True:
+            user_answer = input("Enter your answer (A, B, C, or D): ").strip().upper()
+            if user_answer in valid_input:
+                break
+            else:
+                print("Invalid input. Please enter A, B, C, or D.")
         # Extracts correct answer from data block
         correct_answer = correct_answer.split(": ")[1].strip().upper()
 
@@ -57,7 +63,6 @@ def run_quiz():
         if user_answer == correct_answer:
             print("Correct!")
             score += 1
-
         else:
             print(f"Incorrect! The correct answer was {correct_answer}.")
 
@@ -65,6 +70,7 @@ def run_quiz():
         continue_quiz = input("Do you want to continue? (yes/no): ").strip().lower()
         if continue_quiz != 'yes':
             print("Thank you for playing!!")
+            break
     
     # Final score display
     print("\nQuiz completed!")
