@@ -33,3 +33,8 @@ def run_quiz():
     
     # Shuffles the quiz data to randomize the order of questions
     random.shuffle(quiz_data)
+
+    score = 0 # Initialize score to 0
+    total = len(quiz_data) # Total number of questions
+
+    
