@@ -67,10 +67,20 @@ def run_quiz():
             print(f"Incorrect! The correct answer was {correct_answer}.")
 
         # Asks user if they want to continue after each question
-        continue_quiz = input("Do you want to continue? (yes/no): ").strip().lower()
-        if continue_quiz != 'yes':
-            print("Thank you for playing!!")
-            break
+        valid_input = ['yes', 'no']
+        while True:
+            continue_quiz = input("Do you want to continue? (yes/no): ").strip().lower()
+            if continue_quiz == 'yes':
+                break
+            elif continue_quiz == 'no':
+                print("Thank you for playing!")
+                print("\nQuiz completed!")
+                print(f"\nYour final score is {score} out of {total}.")
+                return
+            elif user_answer in valid_input:
+                break
+            else:
+                print("Invalid input. Please enter yes or no.")
     
     # Final score display
     print("\nQuiz completed!")
