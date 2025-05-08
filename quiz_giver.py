@@ -25,3 +25,8 @@ def run_quiz():
     except FileNotFoundError:
         print(f"Error: The file '{file_name}' was not found.")
         return
+    
+    # Checks if file is empty, if so display error message
+    if not quiz_data:
+        print("No questions found in txt file.")
+        return
