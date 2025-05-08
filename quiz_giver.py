@@ -60,3 +60,12 @@ def run_quiz():
 
         else:
             print(f"Incorrect! The correct answer was {correct_answer}.")
+
+        continue_quiz = input("Do you want to continue? (yes/no): ").strip().lower()
+        if continue_quiz != 'yes':
+            print("Thank you for playing!!")
+
+    print(f"\nYour final score is {score} out of {total}.")
+
+if __name__ == "__main__":
+    run_quiz()
