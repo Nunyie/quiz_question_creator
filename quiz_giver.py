@@ -30,3 +30,6 @@ def run_quiz():
     if not quiz_data:
         print("No questions found in txt file.")
         return
+    
+    # Shuffles the quiz data to randomize the order of questions
+    random.shuffle(quiz_data)
