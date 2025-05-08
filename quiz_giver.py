@@ -4,8 +4,8 @@
 
 import random
 # Reads the text file created by the quiz creator and quizzes the user
-def load_quiz_data(filename='question_bank.txt'):
-    with open(filename, 'r') as file:
+def load_quiz_data(file_name='question_bank.txt'):
+    with open(file_name, 'r') as file:
         lines = [line.strip() for line in file if line.strip()]
 
     quiz_data = []
@@ -16,3 +16,12 @@ def load_quiz_data(filename='question_bank.txt'):
             quiz_data.append(block)
 
     return quiz_data
+
+def run_quiz():
+    file_name = 'question_bank.txt'
+    # Checks if file exists, if not display error message
+    try:
+        quiz_data = load_quiz_data(file_name)
+    except FileNotFoundError:
+        print(f"Error: The file '{file_name}' was not found.")
+        return
