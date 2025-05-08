@@ -48,3 +48,15 @@ def run_quiz():
         for option in options:
             print(option)
         
+        # Get user's input
+        user_answer = input("Enter your answer (a, b, c, or d): ").strip().upper()
+        # Extracts correct answer from data block
+        correct_answer = correct_line.split(": ")[1].strip().upper()
+
+        # Compares user's answer with the correct answer
+        if user_answer == correct_answer:
+            print("Correct!")
+            score += 1
+
+        else:
+            print(f"Incorrect! The correct answer was {correct_answer}.")
